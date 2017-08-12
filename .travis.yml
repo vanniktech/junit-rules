@@ -1,0 +1,34 @@
+language: java
+
+jdk:
+  - oraclejdk8
+
+before_install:
+  - pip install --user codecov
+
+install: true
+
+script: ./gradlew clean build
+
+after_success:
+  - .buildscript/deploy_snapshot.sh
+  - codecov
+
+env:
+  global:
+    - secure: "5km2ETNz3UF9XoXxIrVdUL9zF4yA+WAKLBJWGYSMv5Z8Vw23veIGSgf2beVTVVLqHExS385MVkK20cgr97Y2JYLkrsx8uh+E3u9+Xh+wOgKqdGAWt/de/B8OzDgAMsT22Q4Pb7E4lNALD+ERgoQRkKpqbye5gijU6yD1rilFAGRq45cgEUB1ogm/YlMZSs2sIsYzvBWBA367ySJpnN8eKuKFpRvuoyUCyAvC/Ih4vWZE+dyxO/dMAVFOEkgoPpFcN+PvxfcBx6ZUaRXb3ZifgcOrYEb9ARWuxJ2Qm2dksZztxY36PLtAwGX8fi3k8zGOdat/lxj+QKqS8/wppyNIA+Doi0rZrszblDGjAlwT86gUile+UNth+I3hqQV7i8EzcdZpBHOsls9CstUH/bmFEFugCxIDBktYWONOamwHHUf9Rl1FEnVcKEU4vgtag8EIO6+Q4PWetFAC+3nubJVy7eM/y8hs645aEHEbByGrxDhBc+iSANn9cFKU+RcOnncsIDpTQkBmVeLLbUqTbsUJmwOIuJClQ1eQc4CnRn1THlA67Fk5dYhYKuYQjU5ny2lbbag0tvteA6pfvlixgcE6lxxWzdA1M2WmTgT/oL7SGTokLR7BtwCeRZnM+pMn60uQXGYi4wK7sfwBPs8GsXbk9c6r1X5qfHaHXxesSgdu4ZQ="
+    - secure: "W5JEBBMn9v+8KmY4FkSzEHDpP01h9JULPXf/iPh5n8kEsjIO7HLjNzhkrA0w3gfzYG+ZOEB6gAi5akHYGEdP3qKa0rEhbjjvFPW2z3XiPkWNdEArAFboUkmpNEuSgpAhrjK/69bhF/b/3FUWoyh0Hc2w5kii8/quGYQHisGcSqCqDZqJXdHAo1h3gIVzZKp5GfLgd2Lj5r4BSj1n1mIH3Q94/jONJ1hroItwUkxB5lFp2a4MWCbD+kHy3tQi4pWzXcUpX+z/d6G1hFFFYeQ0Ps6q1At8MDv2V5012nXbYZ4CJDaAu2eBcAIinoP2DtxikhAHqL9pPe9/+RWrGBA4nFALvxOZX0GaDAobAkOhXkZmu2hvshGQi5+uPbCxlMuOTnwf+v8waqNX3PSCc2xZnGc/xF0bBJwx4IfaWir9hRNJonY5qQZapev7kFoKjwsErzazNYlpJVtP3LxLTUsE94pW/tZsqYdoS8+lDkgQijr6YuNut29UQq6WHgBMMDqVjAwErcZZdLKqBbiacFF4Ki/JRV3+HWw6W05XxQpba/NK4vxlWV/QKrXhC5d1Ptjzvs8fpRqLcTOVMhcBGwv08Wj9pIYeX83R3lz8mCVnNXJbJvWKDfVdtrKyVfIIclg6HcjlTVt/v1qHVXj76snRiuta6gzz6xAIESOxnG5FgQc="
+
+branches:
+  except:
+    - gh-pages
+
+notifications:
+  email: false
+
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.gradle
+    - $HOME/.m2
