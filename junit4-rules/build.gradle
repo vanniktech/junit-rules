@@ -1,0 +1,12 @@
+apply plugin: 'java-library'
+
+targetCompatibility = JavaVersion.VERSION_1_7
+sourceCompatibility = JavaVersion.VERSION_1_7
+
+dependencies {
+  compile deps.test.junit
+
+  testCompile deps.test.assertj3
+}
+
+apply from: rootProject.file('gradle/gradle-mvn-push.gradle')

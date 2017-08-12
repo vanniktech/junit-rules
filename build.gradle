@@ -1,0 +1,58 @@
+apply plugin: 'com.github.ben-manes.versions'
+apply plugin: 'com.vanniktech.code.quality.tools'
+apply plugin: 'com.vanniktech.android.junit.jacoco'
+
+buildscript {
+  ext.deps = [
+    'test': [
+      'assertj3': "org.assertj:assertj-core:3.8.0",
+      'junit': 'junit:junit:4.12',
+    ],
+  ]
+
+  repositories {
+    mavenCentral()
+    jcenter()
+  }
+
+  dependencies {
+    classpath 'com.vanniktech:gradle-code-quality-tools-plugin:0.8.0'
+    classpath 'com.vanniktech:gradle-android-junit-jacoco-plugin:0.7.0'
+
+    classpath 'com.github.ben-manes:gradle-versions-plugin:0.15.0'
+  }
+}
+
+codeQualityTools {
+  checkstyle {
+    toolVersion = '8.1'
+  }
+  pmd {
+    toolVersion = '5.8.1'
+  }
+  detekt {
+    toolVersion = '1.0.0.M13.2'
+  }
+  ktlint {
+    toolVersion = '0.9.1'
+  }
+  lint {
+    textReport = true
+  }
+}
+
+subprojects {
+  task allDependencies(type: DependencyReportTask) {}
+
+  repositories {
+    jcenter()
+  }
+
+  group = GROUP
+  version = VERSION_NAME
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '4.1'
+  distributionType = Wrapper.DistributionType.ALL
+}
