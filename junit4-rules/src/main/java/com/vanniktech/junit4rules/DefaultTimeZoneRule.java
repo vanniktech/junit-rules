@@ -5,15 +5,16 @@ import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
 
+/** JUnit rule for taking control over the Timezone. */
 public final class DefaultTimeZoneRule implements TestRule {
   final TimeZone preference;
 
-  /** Creates the rule without any preference and will safely restore the default timezone prior to running the test, after the rest ran. */
+  /** Creates the rule and will safely restore the default timezone for each test. */
   public DefaultTimeZoneRule() {
     preference = null;
   }
 
-  /** Creates the rule with a preference and will safely restore the default timezone prior to running the test, after the rest ran. */
+  /** Creates the rule and will set the preferred timezone for each test. */
   public DefaultTimeZoneRule(final TimeZone preference) {
     this.preference = preference;
   }

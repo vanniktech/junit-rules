@@ -5,15 +5,16 @@ import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
 
+/** JUnit rule for taking control over the Locale. */
 public final class DefaultLocaleRule implements TestRule {
   final Locale preference;
 
-  /** Creates the rule without any preference and will safely restore the default locale prior to running the test, after the rest ran. */
+  /** Creates the rule and will restore the default locale for each test. */
   public DefaultLocaleRule() {
     preference = null;
   }
 
-  /** Creates the rule with a preference and will safely restore the default locale prior to running the test, after the rest ran. */
+  /** Creates the rule and will set the preferred locale for each test. */
   public DefaultLocaleRule(final Locale preference) {
     this.preference = preference;
   }
