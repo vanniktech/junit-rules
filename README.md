@@ -10,8 +10,8 @@ A set of handy junit rules.
 ## JUnit 4
 
 ```groovy
-compile 'com.vanniktech:junit4-rules:0.1.0'
-compile 'com.vanniktech:junit4-rules:0.2.0-SNAPSHOT'
+testCompile 'com.vanniktech:junit4-rules:0.1.0'
+testCompile 'com.vanniktech:junit4-rules:0.2.0-SNAPSHOT'
 ```
 
 ### DefaultLocaleRule
