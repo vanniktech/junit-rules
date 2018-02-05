@@ -1,1 +1,2 @@
 include ':junit4-rules'
+include ':junit4-android-integration-rules'

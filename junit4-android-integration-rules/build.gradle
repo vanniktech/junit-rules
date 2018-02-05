@@ -1,0 +1,51 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.facebook.testing.screenshot:plugin:0.5.0'
+  }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.facebook.testing.screenshot'
+
+afterEvaluate {
+  generateReleaseBuildConfig.enabled = false
+}
+
+android {
+  compileSdkVersion rootProject.ext.compileSdkVersion as int
+
+  compileOptions {
+    sourceCompatibility rootProject.ext.javaVersion as JavaVersion
+    targetCompatibility rootProject.ext.javaVersion as JavaVersion
+  }
+
+  defaultConfig {
+    minSdkVersion rootProject.ext.minSdkVersion as int
+
+    testInstrumentationRunner 'com.vanniktech.junit4androidintegrationrules.UiTestRunner'
+  }
+  buildTypes {
+    debug {
+      testCoverageEnabled true
+    }
+  }
+}
+
+dependencies {
+  api deps.test.junit
+
+  implementation deps.kotlin.jdk7
+  implementation deps.test.android.runner
+
+  testImplementation deps.test.assertj3
+  testImplementation deps.kotlin.reflect
+
+  androidTestImplementation deps.test.android.espresso
+  androidTestImplementation deps.test.android.rules
+}
+
+apply from: rootProject.file('gradle/gradle-mvn-push.gradle')

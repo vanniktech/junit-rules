@@ -1,0 +1,11 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.vanniktech.junit4androidintegrationrules">
+
+  <!-- We need this permission in order to go and take screenshots during tests. -->
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+  <application>
+    <activity android:name=".NoOpActivity"/>
+  </application>
+</manifest>
