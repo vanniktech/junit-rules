@@ -11,7 +11,7 @@ A set of handy junit rules.
 
 ```groovy
 testImplementation 'com.vanniktech:junit4-rules:0.2.0'
-testImplementation 'com.vanniktech:junit4-rules:0.2.0-SNAPSHOT'
+testImplementation 'com.vanniktech:junit4-rules:0.3.0-SNAPSHOT'
 ```
 
 ### DefaultLocaleRule
@@ -48,7 +48,7 @@ For more information have a look at the [tests](junit4-rules/src/test/java/com/v
 
 ```groovy
 androidTestImplementation 'com.vanniktech:junit4-android-integration-rules:0.2.0'
-androidTestImplementation 'com.vanniktech:junit4-android-integration-rules:0.2.0-SNAPSHOT'
+androidTestImplementation 'com.vanniktech:junit4-android-integration-rules:0.3.0-SNAPSHOT'
 ```
 
 ### DemoModeRule
