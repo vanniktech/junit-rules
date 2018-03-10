@@ -4,7 +4,6 @@ jdk:
   - oraclejdk8
 
 before_install:
-  - pip install --user codecov
   # Install SDK license so Android Gradle plugin can install deps.
   - mkdir "$ANDROID_HOME/licenses" || true
   - echo "d56f5187479451eabf01fb78af6dfcb131a6481e" > "$ANDROID_HOME/licenses/android-sdk-license"
@@ -14,7 +13,7 @@ before_install:
   - sdkmanager "system-images;android-21;default;armeabi-v7a"
   # Create and start emulator for the script. Meant to race the install task.
   - echo no | avdmanager create avd --force -n test -k "system-images;android-21;default;armeabi-v7a"
-  - mksdcard -l e 512M test-sd.img
+  - mksdcard -l e 512M test-sd.img # Needed for Facebooks screenshot testing.
   - $ANDROID_HOME/emulator/emulator -avd test -sdcard test-sd.img -no-audio -no-window &
 
 install: ./gradlew clean assemble assembleAndroidTest --stacktrace
@@ -26,8 +25,8 @@ before_script:
 script: ./gradlew check createDebugCoverageReport --stacktrace
 
 after_success:
+  - bash <(curl -s https://codecov.io/bash)
   - .buildscript/deploy_snapshot.sh
-  - codecov
 
 env:
   global:
@@ -43,7 +42,11 @@ notifications:
 
 sudo: false
 
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 cache:
   directories:
-    - $HOME/.gradle
-    - $HOME/.m2
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - $HOME/.android/build-cache
