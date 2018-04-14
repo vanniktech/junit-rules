@@ -24,10 +24,10 @@ import static org.junit.runners.MethodSorters.NAME_ASCENDING;
     Locale.setDefault(KOREAN); // Mutate the actual locale.
   }
 
-  @Test(expected = RuntimeException.class) public void secondShouldNotBeAffected() {
+  @Test(expected = UnsupportedOperationException.class) public void secondShouldNotBeAffected() {
     assertThat(Locale.getDefault()).isNotEqualTo(KOREAN); // Mutation from previous test should not affect this one.
 
-    throw new RuntimeException(); // Let it crash on purpose for the next method.
+    throw new UnsupportedOperationException(); // Let it crash on purpose for the next method.
   }
 
   @Test public void thirdShouldNotBeAffectedEvenInCaseOfACrash() {

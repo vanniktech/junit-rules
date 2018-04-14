@@ -7,5 +7,6 @@
 
   <application>
     <activity android:name=".NoOpActivity"/>
+    <activity android:name=".ForceLocaleRuleActivity"/>
   </application>
 </manifest>

@@ -20,7 +20,7 @@ class CustomDemoModeRuleTest {
       status().bluetooth(BLUETOOTH_MODE_CONNECTED).speakerphone(true),
       clock().hhmm("1800")
   )
-  @get:Rule var activityRule = ActivityTestRule(NoOpActivity::class.java)
+  @get:Rule val activityRule = ActivityTestRule(NoOpActivity::class.java)
 
   @Test fun default() {
     // TODO figure out whether we can make this work. For some context - https://github.com/facebook/screenshot-tests-for-android/issues/148

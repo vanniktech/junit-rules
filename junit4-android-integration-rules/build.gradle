@@ -3,7 +3,7 @@ buildscript {
     jcenter()
   }
   dependencies {
-    classpath 'com.facebook.testing.screenshot:plugin:0.5.0'
+    classpath 'com.facebook.testing.screenshot:plugin:0.6.0'
   }
 }
 
@@ -28,6 +28,7 @@ android {
 
     testInstrumentationRunner 'com.vanniktech.junit4androidintegrationrules.UiTestRunner'
   }
+
   buildTypes {
     debug {
       testCoverageEnabled true
@@ -46,6 +47,7 @@ dependencies {
 
   androidTestImplementation deps.test.android.espresso
   androidTestImplementation deps.test.android.rules
+  androidTestImplementation deps.test.assertj2
 }
 
 apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
