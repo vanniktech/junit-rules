@@ -4,7 +4,7 @@ apply plugin: 'com.vanniktech.android.junit.jacoco'
 
 buildscript {
   ext.versions = [
-    kotlin: '1.2.31',
+    kotlin: '1.2.41',
     testRules: '1.0.1',
     espresso: '3.0.1',
   ]
@@ -49,10 +49,10 @@ codeQualityTools {
     toolVersion = '6.0.1'
   }
   detekt {
-    toolVersion = '1.0.0.RC6-2'
+    toolVersion = '1.0.0.RC7'
   }
   ktlint {
-    toolVersion = '0.21.0'
+    toolVersion = '0.23.1'
   }
   errorProne {
     toolVersion = '2.0.21'

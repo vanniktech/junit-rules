@@ -1,6 +1,6 @@
 package com.vanniktech.junit4androidintegrationrules
 
-private val LIST_OF_TRUE = listOf("plugged", "powersave", "fully", "visible")
+private val listOfTrue = listOf("plugged", "powersave", "fully", "visible")
 
 /** This is not meant as a public API. Use it at your own risk. */
 @Suppress("Detekt.UnnecessaryAbstractClass") abstract class Command(val name: String) {
@@ -12,7 +12,7 @@ private val LIST_OF_TRUE = listOf("plugged", "powersave", "fully", "visible")
 
     when (value) {
       is Boolean -> {
-        val command = if (value) if (LIST_OF_TRUE.contains(key)) "true" else "show" else "false"
+        val command = if (value) if (listOfTrue.contains(key)) "true" else "show" else "false"
         " -e $key $command"
       }
       is EnumValue -> " -e $key ${value.value}"
