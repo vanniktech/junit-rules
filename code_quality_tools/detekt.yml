@@ -11,8 +11,6 @@ style:
     active: false
   MaxLineLength:
     active: false
-  EnumNaming:
-    active: false # https://github.com/arturbosch/detekt/issues/716
 
 comments:
   UndocumentedPublicClass:
