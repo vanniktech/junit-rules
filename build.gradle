@@ -28,7 +28,6 @@ buildscript {
 
   repositories {
     mavenCentral()
-    jcenter()
     google()
     gradlePluginPortal()
   }
@@ -38,6 +37,7 @@ buildscript {
     classpath 'com.vanniktech:gradle-android-junit-jacoco-plugin:0.11.0'
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
     classpath 'com.github.ben-manes:gradle-versions-plugin:0.17.0'
+    classpath 'com.vanniktech:gradle-maven-publish-plugin:0.1.0'
   }
 }
 
@@ -66,12 +66,10 @@ subprojects {
   task allDependencies(type: DependencyReportTask) {}
 
   repositories {
-    jcenter()
+    mavenCentral()
     google()
+    jcenter()
   }
-
-  group = GROUP
-  version = VERSION_NAME
 }
 
 ext {

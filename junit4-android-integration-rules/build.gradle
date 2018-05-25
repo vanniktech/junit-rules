@@ -50,4 +50,4 @@ dependencies {
   androidTestImplementation deps.test.assertj2
 }
 
-apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
+apply plugin: "com.vanniktech.maven.publish"
