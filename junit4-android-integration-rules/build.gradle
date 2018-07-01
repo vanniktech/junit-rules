@@ -39,7 +39,7 @@ android {
 dependencies {
   api deps.test.junit
 
-  implementation deps.kotlin.jdk7
+  implementation deps.kotlin.stdlib
   implementation deps.test.android.runner
 
   testImplementation deps.test.assertj3
