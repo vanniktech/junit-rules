@@ -21,7 +21,7 @@ buildscript {
       ],
     ],
     'kotlin': [
-      'jdk7': "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}",
+      'stdlib': "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
       'reflect': "org.jetbrains.kotlin:kotlin-reflect:${versions.kotlin}",
     ]
   ]
