@@ -1,6 +1,6 @@
 package com.vanniktech.junit4androidintegrationrules
 
-import android.support.test.rule.ActivityTestRule
+import androidx.test.rule.ActivityTestRule
 import com.facebook.testing.screenshot.Screenshot
 import org.junit.Rule
 import org.junit.Test
