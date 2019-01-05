@@ -40,13 +40,18 @@ dependencies {
   api deps.test.junit
 
   implementation deps.kotlin.stdlib
-  implementation deps.test.android.runner
+  implementation deps.support.test.runner
+}
 
+dependencies {
   testImplementation deps.test.assertj3
   testImplementation deps.kotlin.reflect
+}
 
-  androidTestImplementation deps.test.android.espresso
-  androidTestImplementation deps.test.android.rules
+dependencies {
+  androidTestImplementation deps.support.test.espresso.core
+  androidTestImplementation deps.support.test.rules
+  androidTestImplementation deps.support.test.runner
   androidTestImplementation deps.test.assertj2
 }
 

@@ -7,6 +7,8 @@ potential-bugs:
     active: false # We know what we're doing.
 
 style:
+  UnnecessaryApply:
+    active: false
   TopLevelPropertyNaming:
     active: false
   MaxLineLength:

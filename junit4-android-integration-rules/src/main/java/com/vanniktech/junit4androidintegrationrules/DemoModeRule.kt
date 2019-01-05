@@ -3,8 +3,8 @@ package com.vanniktech.junit4androidintegrationrules
 import android.os.Build.VERSION_CODES.LOLLIPOP
 import android.os.ParcelFileDescriptor
 import android.os.ParcelFileDescriptor.AutoCloseInputStream
-import android.support.annotation.RequiresApi
-import android.support.test.InstrumentationRegistry
+import androidx.annotation.RequiresApi
+import androidx.test.platform.app.InstrumentationRegistry
 import com.vanniktech.junit4androidintegrationrules.BatteryCommand.Companion.BATTERY_LEVEL_MAX
 import com.vanniktech.junit4androidintegrationrules.BatteryCommand.Companion.battery
 import com.vanniktech.junit4androidintegrationrules.ClockCommand.Companion.clock

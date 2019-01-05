@@ -3,8 +3,8 @@ package com.vanniktech.junit4androidintegrationrules;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.support.annotation.RequiresApi;
-import android.support.test.InstrumentationRegistry;
+import androidx.annotation.RequiresApi;
+import androidx.test.platform.app.InstrumentationRegistry;
 import java.util.Locale;
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
@@ -45,7 +45,7 @@ import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
   }
 
   void setLocale(final Locale locale) {
-    final Context context = InstrumentationRegistry.getTargetContext();
+    final Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
     Locale.setDefault(locale);
 
