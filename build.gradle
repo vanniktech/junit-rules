@@ -15,7 +15,7 @@ buildscript {
         'espresso': [
           'core': "androidx.test.espresso:espresso-core:${versions.espresso}",
         ],
-        'junitExt': "androidx.test.ext:junit:1.0.0",
+        'junitExt': "androidx.test.ext:junit:1.1.0",
         'runner': "androidx.test:runner:${versions.testRules}",
         'rules': "androidx.test:rules:${versions.testRules}",
       ],
@@ -23,7 +23,7 @@ buildscript {
     'test': [
       'assertj2': "org.assertj:assertj-core:2.9.0",
       'assertj3': "org.assertj:assertj-core:3.11.1",
-      'junit': 'junit:junit:4.12',
+      'junit': 'junit:junit:4.13-beta-1',
     ],
     'kotlin': [
       'stdlib': "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
