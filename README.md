@@ -6,7 +6,7 @@ A set of handy junit rules.
 ## JUnit 4
 
 ```groovy
-testImplementation 'com.vanniktech:junit4-rules:0.2.0'
+testImplementation 'com.vanniktech:junit4-rules:0.3.0'
 testImplementation 'com.vanniktech:junit4-rules:0.3.0-SNAPSHOT'
 ```
 
