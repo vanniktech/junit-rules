@@ -7,7 +7,7 @@ A set of handy junit rules.
 
 ```groovy
 testImplementation 'com.vanniktech:junit4-rules:0.3.0'
-testImplementation 'com.vanniktech:junit4-rules:0.3.0-SNAPSHOT'
+testImplementation 'com.vanniktech:junit4-rules:0.4.0-SNAPSHOT'
 ```
 
 ### DefaultLocaleRule
