@@ -1,5 +1,6 @@
 package com.vanniktech.junit4androidintegrationrules
 
+import android.annotation.SuppressLint
 import androidx.test.rule.ActivityTestRule
 import org.assertj.core.api.Java6Assertions.assertThat
 import org.junit.Rule
@@ -31,6 +32,6 @@ class DefaultLocaleRuleTest {
   }
 
   companion object {
-    val default = Locale.getDefault()
+    @SuppressLint("ConstantLocale") val default = Locale.getDefault()
   }
 }
