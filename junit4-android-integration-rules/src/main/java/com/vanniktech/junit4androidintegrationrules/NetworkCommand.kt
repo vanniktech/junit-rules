@@ -1,5 +1,7 @@
 package com.vanniktech.junit4androidintegrationrules
 
+import com.vanniktech.junit4androidintegrationrules.NetworkCommand.MobileDataType.MOBILE_DATA_TYPE_HIDDEN
+
 /** Allows you to modify Network as per https://android.googlesource.com/platform/frameworks/base/+/master/packages/SystemUI/docs/demo_mode.md */
 class NetworkCommand private constructor() : Command("network") {
   fun airplane(airplane: Boolean) = apply { map["airplane"] = airplane }
@@ -16,7 +18,7 @@ class NetworkCommand private constructor() : Command("network") {
   fun mobile(mobile: Boolean) = apply { map["mobile"] = mobile }
 
   fun mobileDataType(mobileDataType: MobileDataType) = apply {
-    mobile(true)
+    mobile(mobileDataType != MOBILE_DATA_TYPE_HIDDEN)
     map["datatype"] = mobileDataType
   }
 

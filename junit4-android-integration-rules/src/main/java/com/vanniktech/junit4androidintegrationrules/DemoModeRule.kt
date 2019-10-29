@@ -10,6 +10,7 @@ import com.vanniktech.junit4androidintegrationrules.BatteryCommand.Companion.bat
 import com.vanniktech.junit4androidintegrationrules.ClockCommand.Companion.clock
 import com.vanniktech.junit4androidintegrationrules.NetworkCommand.Companion.network
 import com.vanniktech.junit4androidintegrationrules.NetworkCommand.MobileDataType.MOBILE_DATA_TYPE_HIDDEN
+import com.vanniktech.junit4androidintegrationrules.NetworkCommand.WifiLevel.WIFI_LEVEL_4
 import com.vanniktech.junit4androidintegrationrules.NotificationsCommand.Companion.notifications
 import com.vanniktech.junit4androidintegrationrules.StatusCommand.BluetoothMode.BLUETOOTH_MODE_HIDDEN
 import com.vanniktech.junit4androidintegrationrules.StatusCommand.Companion.status
@@ -34,7 +35,7 @@ private const val BROADCAST = "am broadcast -a com.android.systemui.demo -e comm
   private vararg val commands: Command = listOf(
       notifications().visible(false),
       status().bluetooth(BLUETOOTH_MODE_HIDDEN).volume(VOLUME_MODE_HIDDEN).speakerphone(false).location(false).mute(false).alarm(false).eri(false).sync(false).tty(false),
-      network().wifi(false).mobileDataType(MOBILE_DATA_TYPE_HIDDEN).airplane(false).carriernetworkchange(false),
+      network().wifi(true).wifiLevel(WIFI_LEVEL_4).mobileDataType(MOBILE_DATA_TYPE_HIDDEN).airplane(false).carriernetworkchange(false),
       battery().level(BATTERY_LEVEL_MAX).plugged(false).powersave(false),
       clock().hhmm("1100")
   ).toTypedArray()
