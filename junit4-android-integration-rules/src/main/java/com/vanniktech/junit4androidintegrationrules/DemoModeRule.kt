@@ -39,20 +39,20 @@ private const val BROADCAST = "am broadcast -a com.android.systemui.demo -e comm
       clock().hhmm("1100")
   ).toTypedArray()
 ) : TestWatcher() {
-  override fun starting(description: Description) {
-    executeShellCommand("settings put global sysui_demo_allowed 1")
-    executeShellCommand("$BROADCAST exit")
-    executeShellCommand("$BROADCAST enter")
+  override fun starting(description: Description) = enterCommands().forEach { executeShellCommand(it) }
 
-    commands
+  override fun finished(description: Description) = exitCommands().forEach { executeShellCommand(it) }
+
+  fun enterCommands() = listOf("settings put global sysui_demo_allowed 1")
+      .plus(exitCommands())
+      .plus("$BROADCAST enter")
+      .plus(commands
         .map { it.name to it.asCommand() }
         .filter { (_, command) -> command.isNotEmpty() }
-        .forEach { (name, command) -> executeShellCommand("$BROADCAST $name$command") }
-  }
+        .map { (name, command) -> "$BROADCAST $name$command" }
+      )
 
-  override fun finished(description: Description) {
-    executeShellCommand("$BROADCAST exit")
-  }
+  fun exitCommands() = listOf("$BROADCAST exit")
 
   private fun executeShellCommand(command: String) {
     val descriptor = InstrumentationRegistry.getInstrumentation().uiAutomation.executeShellCommand(command)
