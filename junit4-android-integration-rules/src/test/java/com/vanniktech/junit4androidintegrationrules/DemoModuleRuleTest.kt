@@ -1,8 +1,11 @@
 package com.vanniktech.junit4androidintegrationrules
 
+import android.os.Build.VERSION_CODES
+import androidx.annotation.RequiresApi
 import org.assertj.core.api.Java6Assertions.assertThat
 import org.junit.Test
 
+@RequiresApi(VERSION_CODES.LOLLIPOP)
 class DemoModuleRuleTest {
   @Test fun enterCommands() {
     assertThat(DemoModeRule().enterCommands()).containsExactly(
