@@ -23,7 +23,7 @@ buildscript {
     'test': [
       'assertj2': "org.assertj:assertj-core:2.9.0",
       'assertj3': "org.assertj:assertj-core:3.12.0",
-      'junit': 'junit:junit:4.13-beta-2',
+      'junit': 'junit:junit:4.13',
     ],
     'kotlin': [
       'stdlib': "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
@@ -38,12 +38,12 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.vanniktech:gradle-code-quality-tools-plugin:0.17.0'
-    classpath 'com.vanniktech:gradle-android-junit-jacoco-plugin:0.12.0'
+    classpath 'com.vanniktech:gradle-code-quality-tools-plugin:0.20.0'
+    classpath 'com.vanniktech:gradle-android-junit-jacoco-plugin:0.16.0'
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
     classpath 'com.github.ben-manes:gradle-versions-plugin:0.20.0'
-    classpath 'com.vanniktech:gradle-maven-publish-plugin:0.7.0'
-    classpath 'com.android.tools.build:gradle:3.3.1'
+    classpath 'com.vanniktech:gradle-maven-publish-plugin:0.16.0'
+    classpath 'com.android.tools.build:gradle:4.2.1'
   }
 }
 
@@ -54,8 +54,11 @@ codeQualityTools {
   pmd {
     enabled = false
   }
+  cpd {
+    enabled = false
+  }
   detekt {
-    toolVersion = '1.0.0-RC12'
+    toolVersion = '1.0.0'
   }
   ktlint {
     toolVersion = '0.29.0'
@@ -86,6 +89,6 @@ ext {
 }
 
 wrapper {
-  gradleVersion = '5.2.1'
+  gradleVersion = '6.8.3'
   distributionType = Wrapper.DistributionType.ALL
 }

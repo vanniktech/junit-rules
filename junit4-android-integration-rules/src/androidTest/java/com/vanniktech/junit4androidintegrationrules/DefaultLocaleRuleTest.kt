@@ -1,6 +1,8 @@
 package com.vanniktech.junit4androidintegrationrules
 
 import android.annotation.SuppressLint
+import android.os.Build.VERSION_CODES
+import androidx.annotation.RequiresApi
 import androidx.test.rule.ActivityTestRule
 import org.assertj.core.api.Java6Assertions.assertThat
 import org.junit.Rule
@@ -8,6 +10,7 @@ import org.junit.Test
 import java.util.Locale
 import java.util.Locale.KOREAN
 
+@RequiresApi(VERSION_CODES.LOLLIPOP)
 class DefaultLocaleRuleTest {
   @get:Rule val activityRule = ActivityTestRule(ForceLocaleRuleActivity::class.java)
   @get:Rule val forceLocalRule = DefaultLocaleRule()

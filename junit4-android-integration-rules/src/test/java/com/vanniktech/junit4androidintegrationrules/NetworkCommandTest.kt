@@ -75,7 +75,7 @@ class NetworkCommandTest {
     assertThat(network().mobileDataType(MOBILE_DATA_TYPE_H).asCommand()).isEqualTo(" -e mobile show -e datatype h")
     assertThat(network().mobileDataType(MOBILE_DATA_TYPE_LTE).asCommand()).isEqualTo(" -e mobile show -e datatype lte")
     assertThat(network().mobileDataType(MOBILE_DATA_TYPE_ROAM).asCommand()).isEqualTo(" -e mobile show -e datatype roam")
-    assertThat(network().mobileDataType(MOBILE_DATA_TYPE_HIDDEN).asCommand()).isEqualTo(" -e mobile show -e datatype hidden")
+    assertThat(network().mobileDataType(MOBILE_DATA_TYPE_HIDDEN).asCommand()).isEqualTo(" -e mobile false -e datatype hidden")
   }
 
   @Test fun mobileLevel() {
