@@ -3,7 +3,7 @@ buildscript {
     jcenter()
   }
   dependencies {
-    classpath 'com.facebook.testing.screenshot:plugin:0.8.0'
+    classpath 'com.facebook.testing.screenshot:plugin:0.15.0'
   }
 }
 
