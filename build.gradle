@@ -59,10 +59,7 @@ codeQualityTools {
     toolVersion = '1.0.0'
   }
   ktlint {
-    toolVersion = '0.29.0'
-  }
-  errorProne {
-    toolVersion = '2.0.21'
+    toolVersion = '0.45.2'
   }
   lint {
     textReport = true
