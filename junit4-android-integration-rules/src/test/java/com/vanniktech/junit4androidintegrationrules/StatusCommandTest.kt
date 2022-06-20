@@ -9,70 +9,70 @@ import com.vanniktech.junit4androidintegrationrules.StatusCommand.VolumeMode
 import com.vanniktech.junit4androidintegrationrules.StatusCommand.VolumeMode.VOLUME_MODE_HIDDEN
 import com.vanniktech.junit4androidintegrationrules.StatusCommand.VolumeMode.VOLUME_MODE_SILENT
 import com.vanniktech.junit4androidintegrationrules.StatusCommand.VolumeMode.VOLUME_MODE_VIBRATE
-import org.assertj.core.api.Java6Assertions.assertThat
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class StatusCommandTest {
   @Test fun name() {
-    assertThat(status().name).isEqualTo("status")
+    assertEquals("status", status().name)
   }
 
   @Test fun empty() {
-    assertThat(status().asCommand()).isEmpty()
+    assertEquals(true, status().asCommand().isEmpty())
   }
 
   @Test fun volume() {
-    assertThat(status().volume(VOLUME_MODE_SILENT).asCommand()).isEqualTo(" -e volume silent")
-    assertThat(status().volume(VOLUME_MODE_VIBRATE).asCommand()).isEqualTo(" -e volume vibrate")
-    assertThat(status().volume(VOLUME_MODE_HIDDEN).asCommand()).isEqualTo(" -e volume hidden")
+    assertEquals(" -e volume silent", status().volume(VOLUME_MODE_SILENT).asCommand())
+    assertEquals(" -e volume vibrate", status().volume(VOLUME_MODE_VIBRATE).asCommand())
+    assertEquals(" -e volume hidden", status().volume(VOLUME_MODE_HIDDEN).asCommand())
   }
 
   @Test fun bluetooth() {
-    assertThat(status().bluetooth(BLUETOOTH_MODE_CONNECTED).asCommand()).isEqualTo(" -e bluetooth connected")
-    assertThat(status().bluetooth(BLUETOOTH_MODE_DISCONNECTED).asCommand()).isEqualTo(" -e bluetooth disconnected")
-    assertThat(status().bluetooth(BLUETOOTH_MODE_HIDDEN).asCommand()).isEqualTo(" -e bluetooth hidden")
+    assertEquals(" -e bluetooth connected", status().bluetooth(BLUETOOTH_MODE_CONNECTED).asCommand())
+    assertEquals(" -e bluetooth disconnected", status().bluetooth(BLUETOOTH_MODE_DISCONNECTED).asCommand())
+    assertEquals(" -e bluetooth hidden", status().bluetooth(BLUETOOTH_MODE_HIDDEN).asCommand())
   }
 
   @Test fun location() {
-    assertThat(status().location(true).asCommand()).isEqualTo(" -e location show")
-    assertThat(status().location(false).asCommand()).isEqualTo(" -e location false")
+    assertEquals(" -e location show", status().location(true).asCommand())
+    assertEquals(" -e location false", status().location(false).asCommand())
   }
 
   @Test fun alarm() {
-    assertThat(status().alarm(true).asCommand()).isEqualTo(" -e alarm show")
-    assertThat(status().alarm(false).asCommand()).isEqualTo(" -e alarm false")
+    assertEquals(" -e alarm show", status().alarm(true).asCommand())
+    assertEquals(" -e alarm false", status().alarm(false).asCommand())
   }
 
   @Test fun sync() {
-    assertThat(status().sync(true).asCommand()).isEqualTo(" -e sync show")
-    assertThat(status().sync(false).asCommand()).isEqualTo(" -e sync false")
+    assertEquals(" -e sync show", status().sync(true).asCommand())
+    assertEquals(" -e sync false", status().sync(false).asCommand())
   }
 
   @Test fun tty() {
-    assertThat(status().tty(true).asCommand()).isEqualTo(" -e tty show")
-    assertThat(status().tty(false).asCommand()).isEqualTo(" -e tty false")
+    assertEquals(" -e tty show", status().tty(true).asCommand())
+    assertEquals(" -e tty false", status().tty(false).asCommand())
   }
 
   @Test fun eri() {
-    assertThat(status().eri(true).asCommand()).isEqualTo(" -e eri show")
-    assertThat(status().eri(false).asCommand()).isEqualTo(" -e eri false")
+    assertEquals(" -e eri show", status().eri(true).asCommand())
+    assertEquals(" -e eri false", status().eri(false).asCommand())
   }
 
   @Test fun mute() {
-    assertThat(status().mute(true).asCommand()).isEqualTo(" -e mute show")
-    assertThat(status().mute(false).asCommand()).isEqualTo(" -e mute false")
+    assertEquals(" -e mute show", status().mute(true).asCommand())
+    assertEquals(" -e mute false", status().mute(false).asCommand())
   }
 
   @Test fun speakerphone() {
-    assertThat(status().speakerphone(true).asCommand()).isEqualTo(" -e speakerphone show")
-    assertThat(status().speakerphone(false).asCommand()).isEqualTo(" -e speakerphone false")
+    assertEquals(" -e speakerphone show", status().speakerphone(true).asCommand())
+    assertEquals(" -e speakerphone false", status().speakerphone(false).asCommand())
   }
 
   @Test fun volumeModes() {
-    assertThat(VolumeMode.values()).containsExactly(VOLUME_MODE_SILENT, VOLUME_MODE_VIBRATE, VOLUME_MODE_HIDDEN)
+    assertEquals(listOf(VOLUME_MODE_SILENT, VOLUME_MODE_VIBRATE, VOLUME_MODE_HIDDEN), VolumeMode.values().toList())
   }
 
   @Test fun bluetoothModes() {
-    assertThat(BluetoothMode.values()).containsExactly(BLUETOOTH_MODE_CONNECTED, BLUETOOTH_MODE_DISCONNECTED, BLUETOOTH_MODE_HIDDEN)
+    assertEquals(listOf(BLUETOOTH_MODE_CONNECTED, BLUETOOTH_MODE_DISCONNECTED, BLUETOOTH_MODE_HIDDEN), BluetoothMode.values().toList())
   }
 }

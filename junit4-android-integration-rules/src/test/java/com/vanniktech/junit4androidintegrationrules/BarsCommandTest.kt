@@ -5,25 +5,25 @@ import com.vanniktech.junit4androidintegrationrules.BarsCommand.BarMode.BAR_MODE
 import com.vanniktech.junit4androidintegrationrules.BarsCommand.BarMode.BAR_MODE_SEMI_TRANSPARENT
 import com.vanniktech.junit4androidintegrationrules.BarsCommand.BarMode.BAR_MODE_TRANSLUCENT
 import com.vanniktech.junit4androidintegrationrules.BarsCommand.Companion.bars
-import org.assertj.core.api.Java6Assertions.assertThat
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class BarsCommandTest {
   @Test fun name() {
-    assertThat(bars().name).isEqualTo("bars")
+    assertEquals("bars", bars().name)
   }
 
   @Test fun empty() {
-    assertThat(bars().asCommand()).isEmpty()
+    assertEquals(true, bars().asCommand().isEmpty())
   }
 
   @Test fun mode() {
-    assertThat(bars().mode(BAR_MODE_OPAQUE).asCommand()).isEqualTo(" -e mode opaque")
-    assertThat(bars().mode(BAR_MODE_TRANSLUCENT).asCommand()).isEqualTo(" -e mode translucent")
-    assertThat(bars().mode(BAR_MODE_SEMI_TRANSPARENT).asCommand()).isEqualTo(" -e mode semi-transparent")
+    assertEquals(" -e mode opaque", bars().mode(BAR_MODE_OPAQUE).asCommand())
+    assertEquals(" -e mode translucent", bars().mode(BAR_MODE_TRANSLUCENT).asCommand())
+    assertEquals(" -e mode semi-transparent", bars().mode(BAR_MODE_SEMI_TRANSPARENT).asCommand())
   }
 
   @Test fun barModes() {
-    assertThat(BarMode.values()).containsExactly(BAR_MODE_OPAQUE, BAR_MODE_TRANSLUCENT, BAR_MODE_SEMI_TRANSPARENT)
+    assertEquals(listOf(BAR_MODE_OPAQUE, BAR_MODE_TRANSLUCENT, BAR_MODE_SEMI_TRANSPARENT), BarMode.values().toList())
   }
 }
