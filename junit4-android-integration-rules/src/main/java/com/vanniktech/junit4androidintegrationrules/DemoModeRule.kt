@@ -33,11 +33,11 @@ private const val BROADCAST = "am broadcast -a com.android.systemui.demo -e comm
  */
 @RequiresApi(LOLLIPOP) class DemoModeRule(
   private vararg val commands: Command = listOf(
-      notifications().visible(false),
-      status().bluetooth(BLUETOOTH_MODE_HIDDEN).volume(VOLUME_MODE_HIDDEN).speakerphone(false).location(false).mute(false).alarm(false).eri(false).sync(false).tty(false),
-      network().wifi(true).wifiLevel(WIFI_LEVEL_4).mobileDataType(MOBILE_DATA_TYPE_HIDDEN).airplane(false).carriernetworkchange(false),
-      battery().level(BATTERY_LEVEL_MAX).plugged(false).powersave(false),
-      clock().hhmm("1100")
+    notifications().visible(false),
+    status().bluetooth(BLUETOOTH_MODE_HIDDEN).volume(VOLUME_MODE_HIDDEN).speakerphone(false).location(false).mute(false).alarm(false).eri(false).sync(false).tty(false),
+    network().wifi(true).wifiLevel(WIFI_LEVEL_4).mobileDataType(MOBILE_DATA_TYPE_HIDDEN).airplane(false).carriernetworkchange(false),
+    battery().level(BATTERY_LEVEL_MAX).plugged(false).powersave(false),
+    clock().hhmm("1100")
   ).toTypedArray()
 ) : TestWatcher() {
   override fun starting(description: Description) = enterCommands().forEach { executeShellCommand(it) }
@@ -45,13 +45,14 @@ private const val BROADCAST = "am broadcast -a com.android.systemui.demo -e comm
   override fun finished(description: Description) = exitCommands().forEach { executeShellCommand(it) }
 
   fun enterCommands() = listOf("settings put global sysui_demo_allowed 1")
-      .plus(exitCommands())
-      .plus("$BROADCAST enter")
-      .plus(commands
+    .plus(exitCommands())
+    .plus("$BROADCAST enter")
+    .plus(
+      commands
         .map { it.name to it.asCommand() }
         .filter { (_, command) -> command.isNotEmpty() }
         .map { (name, command) -> "$BROADCAST $name$command" }
-      )
+    )
 
   fun exitCommands() = listOf("$BROADCAST exit")
 

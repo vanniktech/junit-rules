@@ -5,8 +5,6 @@ sourceCompatibility = JavaVersion.VERSION_1_7
 
 dependencies {
   api deps.test.junit
-
-  testImplementation deps.test.assertj3
 }
 
 apply plugin: "com.vanniktech.maven.publish"

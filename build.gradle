@@ -1,11 +1,10 @@
 apply plugin: 'com.vanniktech.code.quality.tools'
-apply plugin: 'com.vanniktech.android.junit.jacoco'
 
 buildscript {
   ext.versions = [
-    kotlin: '1.3.21',
-    espresso: '3.1.1',
-    testRules: '1.1.1',
+    kotlin: '1.7.0',
+    espresso: '3.4.0',
+    testRules: '1.4.0',
   ]
 
   ext.deps = [
@@ -15,17 +14,15 @@ buildscript {
           'core': "androidx.test.espresso:espresso-core:${versions.espresso}",
         ],
         'junitExt': "androidx.test.ext:junit:1.1.3",
+        'core': "androidx.test:core:${versions.testRules}",
         'runner': "androidx.test:runner:${versions.testRules}",
         'rules': "androidx.test:rules:${versions.testRules}",
       ],
     ],
     'test': [
-      'assertj2': "org.assertj:assertj-core:2.9.1",
-      'assertj3': "org.assertj:assertj-core:3.12.0",
       'junit': 'junit:junit:4.13.2',
     ],
     'kotlin': [
-      'stdlib': "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
       'reflect': "org.jetbrains.kotlin:kotlin-reflect:${versions.kotlin}",
     ]
   ]
@@ -37,17 +34,16 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.vanniktech:gradle-code-quality-tools-plugin:0.20.0'
-    classpath 'com.vanniktech:gradle-android-junit-jacoco-plugin:0.16.0'
+    classpath 'com.vanniktech:gradle-code-quality-tools-plugin:0.21.0'
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
-    classpath 'com.vanniktech:gradle-maven-publish-plugin:0.16.0'
-    classpath 'com.android.tools.build:gradle:4.2.2'
+    classpath 'com.vanniktech:gradle-maven-publish-plugin:0.20.0'
+    classpath 'com.android.tools.build:gradle:7.2.1'
   }
 }
 
 codeQualityTools {
   checkstyle {
-    toolVersion = '8.7'
+    enabled = false
   }
   pmd {
     enabled = false
@@ -56,13 +52,10 @@ codeQualityTools {
     enabled = false
   }
   detekt {
-    toolVersion = '1.0.0'
+    enabled = false
   }
   ktlint {
-    toolVersion = '0.29.0'
-  }
-  errorProne {
-    toolVersion = '2.0.21'
+    toolVersion = '0.45.2'
   }
   lint {
     textReport = true
@@ -70,8 +63,6 @@ codeQualityTools {
 }
 
 subprojects {
-  task allDependencies(type: DependencyReportTask) {}
-
   repositories {
     mavenCentral()
     google()
@@ -83,10 +74,10 @@ ext {
   minSdkVersion = 15
   compileSdkVersion = 28
 
-  javaVersion = JavaVersion.VERSION_1_7
+  javaVersion = JavaVersion.VERSION_1_8
 }
 
 wrapper {
-  gradleVersion = '6.8.3'
+  gradleVersion = '7.4.2'
   distributionType = Wrapper.DistributionType.ALL
 }

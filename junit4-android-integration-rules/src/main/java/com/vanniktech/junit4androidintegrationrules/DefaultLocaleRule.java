@@ -1,5 +1,6 @@
 package com.vanniktech.junit4androidintegrationrules;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -44,7 +45,7 @@ import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
     };
   }
 
-  void setLocale(final Locale locale) {
+  @SuppressLint("AppBundleLocaleChanges") void setLocale(final Locale locale) {
     final Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
     Locale.setDefault(locale);

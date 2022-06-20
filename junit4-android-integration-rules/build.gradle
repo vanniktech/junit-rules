@@ -39,20 +39,18 @@ android {
 dependencies {
   api deps.test.junit
 
-  implementation deps.kotlin.stdlib
   implementation deps.support.test.runner
 }
 
 dependencies {
-  testImplementation deps.test.assertj3
   testImplementation deps.kotlin.reflect
 }
 
 dependencies {
+  androidTestImplementation deps.support.test.core
   androidTestImplementation deps.support.test.espresso.core
   androidTestImplementation deps.support.test.rules
   androidTestImplementation deps.support.test.runner
-  androidTestImplementation deps.test.assertj2
 }
 
 apply plugin: "com.vanniktech.maven.publish"

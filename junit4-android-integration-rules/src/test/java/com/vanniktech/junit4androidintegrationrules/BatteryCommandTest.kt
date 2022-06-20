@@ -1,44 +1,44 @@
 package com.vanniktech.junit4androidintegrationrules
 
 import com.vanniktech.junit4androidintegrationrules.BatteryCommand.Companion.battery
-import org.assertj.core.api.Java6Assertions.assertThat
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class BatteryCommandTest {
   @Test fun name() {
-    assertThat(battery().name).isEqualTo("battery")
+    assertEquals("battery", battery().name)
   }
 
   @Test fun empty() {
-    assertThat(battery().asCommand()).isEmpty()
+    assertEquals(true, battery().asCommand().isEmpty())
   }
 
   @Test fun invalidLevel() {
     val builder = battery()
 
-    assertThrows<IllegalArgumentException> {
+    assertThrows<IllegalArgumentException>(message = "Battery level should be between 0 and 100") {
       builder.level(-1)
-    }.hasMessage("Battery level should be between 0 and 100")
+    }
 
-    assertThrows<IllegalArgumentException> {
+    assertThrows<IllegalArgumentException>(message = "Battery level should be between 0 and 100") {
       builder.level(101)
-    }.hasMessage("Battery level should be between 0 and 100")
+    }
   }
 
   @Test fun level() {
-    assertThat(battery().level(0).asCommand()).isEqualTo(" -e level 0")
-    assertThat(battery().level(1).asCommand()).isEqualTo(" -e level 1")
-    assertThat(battery().level(5).asCommand()).isEqualTo(" -e level 5")
-    assertThat(battery().level(100).asCommand()).isEqualTo(" -e level 100")
+    assertEquals(" -e level 0", battery().level(0).asCommand())
+    assertEquals(" -e level 1", battery().level(1).asCommand())
+    assertEquals(" -e level 5", battery().level(5).asCommand())
+    assertEquals(" -e level 100", battery().level(100).asCommand())
   }
 
   @Test fun plugged() {
-    assertThat(battery().plugged(false).asCommand()).isEqualTo(" -e plugged false")
-    assertThat(battery().plugged(true).asCommand()).isEqualTo(" -e plugged true")
+    assertEquals(" -e plugged false", battery().plugged(false).asCommand())
+    assertEquals(" -e plugged true", battery().plugged(true).asCommand())
   }
 
   @Test fun powersave() {
-    assertThat(battery().powersave(false).asCommand()).isEqualTo(" -e powersave false")
-    assertThat(battery().powersave(true).asCommand()).isEqualTo(" -e powersave true")
+    assertEquals(" -e powersave false", battery().powersave(false).asCommand())
+    assertEquals(" -e powersave true", battery().powersave(true).asCommand())
   }
 }
