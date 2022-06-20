@@ -11,10 +11,6 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.facebook.testing.screenshot'
 
-afterEvaluate {
-  generateReleaseBuildConfig.enabled = false
-}
-
 android {
   compileSdkVersion rootProject.ext.compileSdkVersion as int
 
