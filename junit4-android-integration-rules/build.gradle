@@ -24,12 +24,6 @@ android {
 
     testInstrumentationRunner 'com.vanniktech.junit4androidintegrationrules.UiTestRunner'
   }
-
-  buildTypes {
-    debug {
-      testCoverageEnabled true
-    }
-  }
 }
 
 dependencies {
