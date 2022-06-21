@@ -1,0 +1,26 @@
+
+------------------------------------------------------------
+Project ':junit4-android-integration-rules'
+------------------------------------------------------------
+
+releaseRuntimeClasspath - Runtime classpath of compilation 'release' (target  (androidJvm)).
++--- junit:junit:4.13.2
+|    \--- org.hamcrest:hamcrest-core:1.3
++--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.0
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.7.0
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.7.0
+|    |    \--- org.jetbrains:annotations:13.0
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.0
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.7.0 (*)
+\--- androidx.test:runner:1.4.0
+     +--- androidx.annotation:annotation:1.0.0
+     +--- androidx.test:monitor:1.4.0
+     |    \--- androidx.annotation:annotation:1.0.0
+     +--- androidx.test.services:storage:1.4.0
+     |    +--- androidx.test:monitor:1.4.0 (*)
+     |    \--- com.google.code.findbugs:jsr305:2.0.1
+     \--- junit:junit:4.12 -> 4.13.2 (*)
+
+(*) - dependencies omitted (listed previously)
+
+A web-based, searchable dependency report is available by adding the --scan option.
