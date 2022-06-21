@@ -1,4 +1,13 @@
+plugins {
+  id("app.cash.licensee")
+}
+
 apply plugin: 'java-library'
+
+licensee {
+  allow("EPL-1.0")
+  allowUrl("http://www.opensource.org/licenses/bsd-license.php") // https://github.com/cashapp/licensee/pull/99
+}
 
 targetCompatibility = JavaVersion.VERSION_1_7
 sourceCompatibility = JavaVersion.VERSION_1_7
