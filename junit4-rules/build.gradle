@@ -7,13 +7,11 @@ apply plugin: 'java-library'
 
 licensee {
   allow("EPL-1.0")
-  allowUrl("http://www.opensource.org/licenses/bsd-license.php") // https://github.com/cashapp/licensee/pull/99
+  allow("BSD-2-Clause")
 }
 
 dependencyGuard {
-  configuration("runtimeClasspath") {
-    tree = true
-  }
+  configuration("runtimeClasspath")
 }
 
 targetCompatibility = JavaVersion.VERSION_1_7
