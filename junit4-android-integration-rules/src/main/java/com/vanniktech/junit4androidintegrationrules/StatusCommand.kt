@@ -23,13 +23,13 @@ class StatusCommand private constructor() : Command("status") {
   enum class VolumeMode(override val value: String) : EnumValue {
     VOLUME_MODE_SILENT("silent"),
     VOLUME_MODE_VIBRATE("vibrate"),
-    VOLUME_MODE_HIDDEN("hidden")
+    VOLUME_MODE_HIDDEN("hidden"),
   }
 
   enum class BluetoothMode(override val value: String) : EnumValue {
     BLUETOOTH_MODE_CONNECTED("connected"),
     BLUETOOTH_MODE_DISCONNECTED("disconnected"),
-    BLUETOOTH_MODE_HIDDEN("hidden")
+    BLUETOOTH_MODE_HIDDEN("hidden"),
   }
 
   companion object {

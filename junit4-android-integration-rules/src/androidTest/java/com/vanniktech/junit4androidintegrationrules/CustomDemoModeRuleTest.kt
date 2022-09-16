@@ -21,7 +21,7 @@ class CustomDemoModeRuleTest {
     network().wifi(true).mobileDataType(MOBILE_DATA_TYPE_E),
     battery().level(11).plugged(false).powersave(true),
     status().bluetooth(BLUETOOTH_MODE_CONNECTED).speakerphone(true),
-    clock().hhmm("1800")
+    clock().hhmm("1800"),
   )
   @get:Rule val activityScenario = ActivityScenario.launch(NoOpActivity::class.java)
 
