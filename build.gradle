@@ -58,7 +58,7 @@ codeQualityTools {
     enabled = false
   }
   ktlint {
-    toolVersion = '0.45.2'
+    toolVersion = '0.47.1'
   }
   lint {
     textReport = true
@@ -78,9 +78,4 @@ ext {
   compileSdkVersion = 28
 
   javaVersion = JavaVersion.VERSION_1_8
-}
-
-wrapper {
-  gradleVersion = '7.4.2'
-  distributionType = Wrapper.DistributionType.ALL
 }

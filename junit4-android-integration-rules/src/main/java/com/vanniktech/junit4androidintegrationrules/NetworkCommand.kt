@@ -42,7 +42,7 @@ class NetworkCommand private constructor() : Command("network") {
     WIFI_LEVEL_1("1"),
     WIFI_LEVEL_2("2"),
     WIFI_LEVEL_3("3"),
-    WIFI_LEVEL_4("4")
+    WIFI_LEVEL_4("4"),
   }
 
   enum class MobileDataType(override val value: String) : EnumValue {
@@ -54,7 +54,7 @@ class NetworkCommand private constructor() : Command("network") {
     MOBILE_DATA_TYPE_H("h"),
     MOBILE_DATA_TYPE_LTE("lte"),
     MOBILE_DATA_TYPE_ROAM("roam"),
-    MOBILE_DATA_TYPE_HIDDEN("hidden")
+    MOBILE_DATA_TYPE_HIDDEN("hidden"),
   }
 
   enum class MobileLevel(override val value: String) : EnumValue {
@@ -63,7 +63,7 @@ class NetworkCommand private constructor() : Command("network") {
     MOBILE_LEVEL_1("1"),
     MOBILE_LEVEL_2("2"),
     MOBILE_LEVEL_3("3"),
-    MOBILE_LEVEL_4("4")
+    MOBILE_LEVEL_4("4"),
   }
 
   companion object {

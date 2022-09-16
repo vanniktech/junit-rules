@@ -7,7 +7,7 @@ class BarsCommand private constructor() : Command("bars") {
   enum class BarMode(override val value: String) : EnumValue {
     BAR_MODE_OPAQUE("opaque"),
     BAR_MODE_TRANSLUCENT("translucent"),
-    BAR_MODE_SEMI_TRANSPARENT("semi-transparent")
+    BAR_MODE_SEMI_TRANSPARENT("semi-transparent"),
   }
 
   companion object {
