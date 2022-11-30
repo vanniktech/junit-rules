@@ -3,7 +3,7 @@ apply plugin: 'com.vanniktech.code.quality.tools'
 buildscript {
   ext.versions = [
     kotlin: '1.7.0',
-    espresso: '3.4.0',
+    espresso: '3.5.0',
     testRules: '1.4.0',
   ]
 
