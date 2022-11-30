@@ -4,7 +4,6 @@ buildscript {
   ext.versions = [
     kotlin: '1.7.0',
     espresso: '3.5.0',
-    testRules: '1.4.0',
   ]
 
   ext.deps = [
@@ -14,9 +13,9 @@ buildscript {
           'core': "androidx.test.espresso:espresso-core:${versions.espresso}",
         ],
         'junitExt': "androidx.test.ext:junit:1.1.4",
-        'core': "androidx.test:core:${versions.testRules}",
-        'runner': "androidx.test:runner:${versions.testRules}",
-        'rules': "androidx.test:rules:${versions.testRules}",
+        'core': "androidx.test:core:1.5.0",
+        'runner': "androidx.test:runner:1.5.1",
+        'rules': "androidx.test:rules:1.5.0",
       ],
     ],
     'test': [
