@@ -1,6 +1,5 @@
 plugins {
   id("app.cash.licensee")
-  id("com.dropbox.dependency-guard")
 }
 
 apply plugin: 'java-library'
@@ -8,10 +7,6 @@ apply plugin: 'java-library'
 licensee {
   allow("EPL-1.0")
   allow("BSD-2-Clause")
-}
-
-dependencyGuard {
-  configuration("runtimeClasspath")
 }
 
 targetCompatibility = JavaVersion.VERSION_1_7
