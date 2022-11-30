@@ -1,2 +1,0 @@
-junit:junit:4.13.2
-org.hamcrest:hamcrest-core:1.3
