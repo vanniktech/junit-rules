@@ -14,7 +14,7 @@ buildscript {
         ],
         'junitExt': "androidx.test.ext:junit:1.1.5",
         'core': "androidx.test:core:1.5.0",
-        'runner': "androidx.test:runner:1.5.1",
+        'runner': "androidx.test:runner:1.5.2",
         'rules': "androidx.test:rules:1.5.0",
       ],
     ],
