@@ -36,9 +36,9 @@ buildscript {
     classpath 'com.vanniktech:gradle-code-quality-tools-plugin:0.22.0'
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
     classpath 'com.vanniktech:gradle-maven-publish-plugin:0.25.3'
-    classpath 'com.android.tools.build:gradle:7.4.2'
+    classpath 'com.android.tools.build:gradle:8.0.2'
     classpath 'app.cash.licensee:licensee-gradle-plugin:1.7.0'
-    classpath 'com.facebook.testing.screenshot:plugin:0.8.0'
+    classpath 'com.facebook.testing.screenshot:plugin:0.15.0'
   }
 }
 
@@ -73,7 +73,5 @@ subprojects {
 
 ext {
   minSdkVersion = 15
-  compileSdkVersion = 28
-
-  javaVersion = JavaVersion.VERSION_1_8
+  compileSdkVersion = 33
 }
