@@ -4,17 +4,14 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import androidx.annotation.RequiresApi;
 import androidx.test.platform.app.InstrumentationRegistry;
 import java.util.Locale;
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
 
-import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR1;
-
 /** JUnit rule for taking control over the Locale. */
-@RequiresApi(JELLY_BEAN_MR1) public final class DefaultLocaleRule implements TestRule {
+public final class DefaultLocaleRule implements TestRule {
   final Locale preference;
 
   /** Creates the rule and will restore the default locale for each test. */

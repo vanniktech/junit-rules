@@ -1,7 +1,5 @@
 package com.vanniktech.junit4androidintegrationrules
 
-import android.os.Build.VERSION_CODES
-import androidx.annotation.RequiresApi
 import androidx.test.core.app.ActivityScenario
 import com.facebook.testing.screenshot.Screenshot
 import com.vanniktech.junit4androidintegrationrules.BatteryCommand.Companion.battery
@@ -14,7 +12,6 @@ import com.vanniktech.junit4androidintegrationrules.StatusCommand.Companion.stat
 import org.junit.Rule
 import org.junit.Test
 
-@RequiresApi(VERSION_CODES.LOLLIPOP)
 class CustomDemoModeRuleTest {
   @get:Rule val demoModeRule = DemoModeRule(
     notifications().visible(false),

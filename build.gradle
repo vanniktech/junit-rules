@@ -67,11 +67,10 @@ subprojects {
   repositories {
     mavenCentral()
     google()
-    jcenter()
   }
 }
 
 ext {
-  minSdkVersion = 15
+  minSdkVersion = 21
   compileSdkVersion = 33
 }

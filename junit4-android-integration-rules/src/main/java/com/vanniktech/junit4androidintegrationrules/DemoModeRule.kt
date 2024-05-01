@@ -1,9 +1,7 @@
 package com.vanniktech.junit4androidintegrationrules
 
-import android.os.Build.VERSION_CODES.LOLLIPOP
 import android.os.ParcelFileDescriptor
 import android.os.ParcelFileDescriptor.AutoCloseInputStream
-import androidx.annotation.RequiresApi
 import androidx.test.platform.app.InstrumentationRegistry
 import com.vanniktech.junit4androidintegrationrules.BatteryCommand.Companion.BATTERY_LEVEL_MAX
 import com.vanniktech.junit4androidintegrationrules.BatteryCommand.Companion.battery
@@ -31,7 +29,7 @@ private const val BROADCAST = "am broadcast -a com.android.systemui.demo -e comm
  * This can be customized by using the following commands.
  * [BarsCommand], [BatteryCommand], [ClockCommand], [NetworkCommand], [NotificationsCommand] and [StatusCommand].
  */
-@RequiresApi(LOLLIPOP) class DemoModeRule(
+class DemoModeRule(
   private vararg val commands: Command = listOf(
     notifications().visible(false),
     status().bluetooth(BLUETOOTH_MODE_HIDDEN).volume(VOLUME_MODE_HIDDEN).speakerphone(false).location(false).mute(false).alarm(false).eri(false).sync(false).tty(false),

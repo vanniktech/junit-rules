@@ -1,7 +1,5 @@
 package com.vanniktech.junit4androidintegrationrules
 
-import android.os.Build.VERSION_CODES
-import androidx.annotation.RequiresApi
 import androidx.test.core.app.ActivityScenario
 import org.junit.Assert.assertEquals
 import org.junit.FixMethodOrder
@@ -14,7 +12,6 @@ import java.util.Locale.KOREAN
 
 @FixMethodOrder(NAME_ASCENDING) class DefaultLocaleRuleWithPreferenceTest {
   @get:Rule val activityScenario = ActivityScenario.launch(ForceLocaleRuleActivity::class.java)
-  @RequiresApi(VERSION_CODES.JELLY_BEAN_MR1)
   @get:Rule val forceLocalRule = DefaultLocaleRule(CHINESE)
 
   @Test fun firstShouldGetPreference() {
