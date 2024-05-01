@@ -1,11 +1,8 @@
 package com.vanniktech.junit4androidintegrationrules
 
-import android.os.Build.VERSION_CODES
-import androidx.annotation.RequiresApi
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-@RequiresApi(VERSION_CODES.LOLLIPOP)
 class DemoModuleRuleTest {
   @Test fun enterCommands() {
     val list = listOf(
