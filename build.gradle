@@ -56,7 +56,7 @@ codeQualityTools {
     enabled = false
   }
   ktlint {
-    toolVersion = '1.0.1'
+    toolVersion = '1.2.1'
   }
   lint {
     textReport = true
