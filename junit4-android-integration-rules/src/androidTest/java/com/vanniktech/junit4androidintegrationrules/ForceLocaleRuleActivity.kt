@@ -14,7 +14,7 @@ class ForceLocaleRuleActivity : Activity() {
 
     textView = TextView(this).apply {
       id = 1
-      text = "${Locale.getDefault()}"
+      text = Locale.getDefault()
     }
 
     setContentView(textView)
