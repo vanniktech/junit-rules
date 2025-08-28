@@ -8,8 +8,8 @@ licensee {
   allow("BSD-2-Clause")
 }
 
-targetCompatibility = JavaVersion.VERSION_11
-sourceCompatibility = JavaVersion.VERSION_11
+java.targetCompatibility = JavaVersion.VERSION_11
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 dependencies {
   api deps.test.junit
