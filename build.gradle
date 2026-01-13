@@ -33,7 +33,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.vanniktech:gradle-code-quality-tools-plugin:0.24.0'
+    classpath 'com.vanniktech:gradle-code-quality-tools-plugin:0.25.0'
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
     classpath 'com.vanniktech:gradle-maven-publish-plugin:0.35.0'
     classpath 'com.android.tools.build:gradle:8.13.2'
@@ -52,11 +52,8 @@ codeQualityTools {
   cpd {
     enabled = false
   }
-  detekt {
-    enabled = false
-  }
   ktlint {
-    toolVersion = '1.4.1'
+    toolVersion = '1.8.0'
   }
   lint {
     textReport = true
