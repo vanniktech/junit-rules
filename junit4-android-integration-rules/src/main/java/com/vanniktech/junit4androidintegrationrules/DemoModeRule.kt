@@ -33,7 +33,7 @@ class DemoModeRule(
   private vararg val commands: Command = listOf(
     notifications().visible(false),
     status().bluetooth(BLUETOOTH_MODE_HIDDEN).volume(VOLUME_MODE_HIDDEN).speakerphone(false).location(false).mute(false).alarm(false).eri(false).sync(false).tty(false),
-    network().wifi(true).wifiLevel(WIFI_LEVEL_4).mobileDataType(MOBILE_DATA_TYPE_HIDDEN).airplane(false).carriernetworkchange(false),
+    network().wifi(true).wifiLevel(WIFI_LEVEL_4).mobileDataType(MOBILE_DATA_TYPE_HIDDEN).airplane(false).carriernetworkchange(false).fully(true),
     battery().level(BATTERY_LEVEL_MAX).plugged(false).powersave(false),
     clock().hhmm("1100"),
   ).toTypedArray(),
