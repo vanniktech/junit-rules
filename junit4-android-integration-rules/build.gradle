@@ -13,7 +13,7 @@ licensee {
 
 kotlin {
   jvmToolchain {
-    languageVersion.set(JavaLanguageVersion.of(11))
+    languageVersion.set(JavaLanguageVersion.of(21))
   }
 }
 
@@ -21,11 +21,6 @@ android {
   namespace "com.vanniktech.junit4androidintegrationrules"
 
   compileSdkVersion rootProject.ext.compileSdkVersion as int
-
-  compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
-  }
 
   defaultConfig {
     minSdkVersion rootProject.ext.minSdkVersion as int
