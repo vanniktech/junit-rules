@@ -1,7 +1,12 @@
 # Change Log
 
-Version 0.4.0 *(In development)*
---------------------------------
+Version 0.4.0 *(2026-05-24)*
+----------------------------
+
+- Technical: Use Java 21. [\#261](https://github.com/vanniktech/junit-rules/pull/261) ([vanniktech](https://github.com/vanniktech))
+- DemoModeRule: Set fully(true) to Network to avoid the no internet exclamation mark. [\#260](https://github.com/vanniktech/junit-rules/pull/260) ([vanniktech](https://github.com/vanniktech))
+- API: Bump minSdk to 21. [\#152](https://github.com/vanniktech/junit-rules/pull/152) ([vanniktech](https://github.com/vanniktech))
+- DemoModuleRule: Show wifi & hide mobile by default. Fix MobileDataType case. [\#42](https://github.com/vanniktech/junit-rules/pull/42) ([vanniktech](https://github.com/vanniktech))
 
 Version 0.3.0 *(2019-01-06)*
 ----------------------------
